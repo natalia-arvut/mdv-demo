@@ -4,325 +4,350 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MDV Treuhand — бухгалтерия в реальном времени для средних и крупных компаний</title>
-<meta name="description" content="MDV Treuhand берёт на себя бухгалтерию и роль внешнего финансового директора для средних и крупных компаний в регионе Биль/Зееланд, Берн и Аргау. Актуальные цифры каждый день — дешевле собственного отдела.">
+<meta name="description" content="MDV Treuhand берёт на себя бухгалтерию и роль вашего финансового директора в реальном времени — для средних и крупных компаний в регионе Биль/Зееланд, Берн и Аргау. Digital und einfach.">
 <style>
 @import url('assets/fonts/fonts.css');
 :root{
-  --gold:#f47424; --gold-d:#c9521a; --ink:#2b2b2b; --black:#1c1c1c;
-  --gray:#8f8f8f; --body:#55534f; --line:#ece9e4; --tint:#f7f5f1; --cream:#faf8f4;
-  --green:#009b9f;
+  --orange:#f47424; --orange-d:#dd5712; --orange-soft:#fdf0e7;
+  --teal:#3fa6c8; --teal-soft:#e9f4f9;
+  --ink:#2c2a27; --body:#6c6963; --muted:#9b978f;
+  --bg:#ffffff; --soft:#faf8f4; --line:#ece8e1;
+  --dark:#3a3a3a; --green:#009b9f;
+  --r:16px;
 }
 *{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
 html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--body);background:var(--bg);line-height:1.7;font-size:16.5px;}
 a{text-decoration:none;color:inherit;}
-body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--body);background:#fff;line-height:1.65;font-size:16px;}
-h1,h2,h3,h4{font-family:'Poppins','Manrope',sans-serif;color:var(--ink);font-weight:500;line-height:1.18;margin:0;}
-.upper{text-transform:uppercase;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 26px;}
-.eyebrow{font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:var(--gold-d);}
-.h-sec{font-family:'Poppins','Manrope',sans-serif;font-weight:500;color:var(--ink);font-size:clamp(1.6rem,3.2vw,2.3rem);letter-spacing:.01em;line-height:1.2;}
-.rule{width:54px;height:2px;background:var(--gold);margin-top:18px;}
-.lead{font-size:1.06rem;color:var(--body);}
-.btn{display:inline-block;font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;
-  background:var(--gold);color:#fff;padding:15px 30px;border:1.5px solid var(--gold);transition:.2s;cursor:pointer;}
-.btn:hover{background:var(--gold-d);border-color:var(--gold-d);}
-.btn-out{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
-.btn-out:hover{background:var(--ink);color:#fff;}
-.nav-a{font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:600;color:var(--gray);transition:color .2s;}
-.nav-a:hover{color:#fff;}
-.card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:transform .28s,box-shadow .28s,border-color .28s;}
-.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(40,40,40,.28);border-color:var(--gold);}
-.ico{width:46px;height:46px;color:var(--gold);margin-bottom:18px;}
-.ico svg{width:100%;height:100%;}
-.card h3{font-size:1.1rem;margin-bottom:10px;letter-spacing:.005em;}
-.card p{font-size:.95rem;color:var(--body);}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform;}
+img{display:block;max-width:100%;}
+h1,h2,h3,h4{font-family:'Poppins','Manrope',sans-serif;color:var(--ink);font-weight:600;line-height:1.2;margin:0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-family:'Manrope',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;font-weight:700;color:var(--orange);}
+.sec-h{font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.01em;}
+.lead{font-size:1.08rem;color:var(--body);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Manrope',sans-serif;font-weight:700;font-size:.95rem;
+  background:var(--orange);color:#fff;padding:14px 28px;border-radius:8px;border:2px solid var(--orange);transition:.2s;cursor:pointer;}
+.btn:hover{background:var(--orange-d);border-color:var(--orange-d);transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(221,87,18,.6);}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);}
+.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff;box-shadow:none;}
+.btn-o{background:transparent;color:var(--orange-d);border:2px solid var(--orange);}
+.btn-o:hover{background:var(--orange);color:#fff;}
+.link-more{display:inline-flex;align-items:center;gap:6px;color:var(--orange-d);font-weight:700;font-size:.92rem;transition:gap .2s;}
+.link-more:hover{gap:11px;}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .25s;}
+header.scrolled{box-shadow:0 8px 30px -18px rgba(0,0,0,.25);}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);}
+.nav-links a{font-weight:600;font-size:.95rem;color:var(--ink);transition:color .2s;}
+.nav-links a:hover{color:var(--orange);}
+/* hero */
+.hero{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden;}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;}
+.hero .ov{position:absolute;inset:0;background:linear-gradient(100deg,rgba(38,28,20,.86) 0%,rgba(38,28,20,.62) 42%,rgba(38,28,20,.20) 72%,rgba(38,28,20,.05) 100%);}
+.hero .inner{position:relative;color:#fff;padding:70px 0;max-width:660px;}
+.hero h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.5rem);letter-spacing:-.015em;line-height:1.08;}
+.chip{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;
+  padding:7px 15px;border-radius:100px;font-size:.8rem;font-weight:600;letter-spacing:.02em;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+/* cards / icons */
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:transform .28s,box-shadow .28s;}
+.svc:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(40,40,40,.4);}
+.tile{width:60px;height:60px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.tile svg{width:32px;height:32px;}
+.svc h3{font-size:1.16rem;margin-bottom:9px;}
+.svc p{font-size:.96rem;margin-bottom:16px;}
+.pill{display:inline-flex;flex-direction:column;gap:2px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;}
+.pill b{font-family:'Poppins','Manrope';font-weight:600;font-size:1.5rem;color:var(--orange-d);line-height:1;}
+.pill span{font-size:.82rem;color:var(--muted);}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
 .reveal.in{opacity:1;transform:none;}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto;}.reveal{opacity:1;transform:none;}}
-#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:46px;height:46px;background:rgba(244,116,36,.66);color:#fff;border:none;border-radius:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);box-shadow:0 10px 24px -12px rgba(40,40,40,.45);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s;}
-#toTop.show{opacity:1;visibility:visible;transform:none;}#toTop:hover{background:rgba(201,82,26,.95);}
-@media(max-width:880px){.hide-mob{display:none!important;}}
-@media(max-width:760px){#hero-grid{grid-template-columns:1fr!important;grid-template-rows:auto auto!important;}#hero-photo{min-height:240px;}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}.reveal{opacity:1;transform:none;}}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 14px;font-family:inherit;font-size:.96rem;color:var(--ink);background:#fff;transition:border-color .2s;}
+input:focus,textarea:focus{outline:none;border-color:var(--orange);}
+label{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:6px;}
+#toTop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;background:var(--orange);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -12px rgba(221,87,18,.7);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;}
+#toTop.show{opacity:1;visibility:visible;transform:none;}
+@media(max-width:860px){.nav-links{display:none;}.hero .ov{background:linear-gradient(180deg,rgba(38,28,20,.5),rgba(38,28,20,.82));}}
+@media(max-width:820px){.g2{grid-template-columns:1fr!important;gap:40px!important;}.g2 .order-img{order:-1!important;}}
 </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<section id="top" style="min-height:100svh;display:flex;flex-direction:column;">
-  <div id="hero-grid" style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;min-height:0;">
-    <!-- левая половина: текст -->
-    <div style="display:flex;flex-direction:column;background:var(--cream);padding:34px clamp(26px,5vw,72px);">
-      <a href="#top" aria-label="MDV Treuhand" style="flex-shrink:0;"><img src="assets/img/logo-mdv.png?v=1" alt="MDV Treuhand GmbH" style="height:46px;width:auto;display:block;"></a>
-      <div style="flex:1;display:flex;align-items:center;">
-      <div class="reveal" style="max-width:560px;">
-        <p class="eyebrow" style="margin-bottom:18px;">Для средних и крупных компаний — Биль/Зееланд, Берн и Аргау</p>
-        <h1 class="upper" style="font-size:clamp(1.85rem,3.5vw,2.8rem);letter-spacing:.005em;line-height:1.14;margin-bottom:20px;">Финансы вашей компании — в реальном времени</h1>
-        <p class="lead" style="margin-bottom:28px;">MDV Treuhand берёт на себя вашу бухгалтерию и роль внешнего финансового директора. Актуальная картина бизнеса каждый день — заметно дешевле, чем собственный отдел.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;">
-          <a href="#contact" class="btn">Запросить расчёт</a>
-          <a href="#stoimost" class="btn btn-out">Смотреть стоимость</a>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;margin-top:30px;">
-          <span style="width:34px;height:1px;background:var(--gold);"></span>
-          <span style="font-size:.82rem;color:var(--body);letter-spacing:.02em;"><b style="color:var(--ink);">Digital und einfach</b> — двуязычное обслуживание DE/FR в регионе Биль/Зееланд</span>
-        </div>
-      </div>
-      </div>
-    </div>
-    <!-- правая половина: здание -->
-    <div id="hero-photo" style="position:relative;overflow:hidden;background:var(--ink);">
-      <img src="assets/img/building.jpg?v=1" alt="Современное бизнес-здание" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;">
-    </div>
+<!-- ===== ВЕРХНЕЕ МЕНЮ (как у MDV) ===== -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" aria-label="MDV Treuhand"><img src="assets/img/logo-mdv.png?v=2" alt="MDV Treuhand GmbH" style="height:42px;width:auto;"></a>
+    <nav class="nav-links">
+      <a href="#uslugi">Услуги</a>
+      <a href="#pochemu">Почему MDV</a>
+      <a href="#stoimost">Стоимость</a>
+      <a href="#region">Регион</a>
+    </nav>
+    <a href="#contact" class="btn" style="padding:11px 22px;">Запросить расчёт</a>
   </div>
-  <!-- чёрная полоса-меню -->
-  <nav style="background:var(--black);">
-    <div class="wrap" style="height:58px;display:flex;align-items:center;justify-content:center;gap:clamp(18px,4vw,46px);flex-wrap:wrap;">
-      <a href="#top" class="nav-a">Старт</a>
-      <a href="#uslugi" class="nav-a">Услуги</a>
-      <a href="#preimushchestva" class="nav-a">Преимущества</a>
-      <a href="#stoimost" class="nav-a">Стоимость</a>
-      <a href="#region" class="nav-a">Регион</a>
-      <a href="#contact" class="nav-a">Контакт</a>
-    </div>
-  </nav>
-</section>
+</header>
 
-<!-- ===== СДВИГ ===== -->
-<section style="padding:88px 0;background:#fff;">
+<!-- ===== HERO (фото + наложение, в духе «Ihr persönlicher Finanzchef») ===== -->
+<section id="top" class="hero">
+  <img class="bg" src="assets/img/hero.jpg?v=2" alt="Команда работает с финансами">
+  <div class="ov"></div>
   <div class="wrap">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 52px;">
-      <p class="eyebrow">Что меняется</p>
-      <h2 class="h-sec" style="margin-top:12px;">Раньше — свой штат.<br>Теперь — реальное время.</h2>
-      <div class="rule" style="margin:18px auto 0;"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border:1px solid var(--line);">
-      <div class="reveal" style="padding:40px 36px;border-right:1px solid var(--line);">
-        <h3 class="upper" style="font-size:1.05rem;letter-spacing:.05em;color:var(--gray);margin-bottom:22px;">Раньше</h3>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:15px;">
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);font-weight:700;">—</span>Отчётность раз в квартал — решения почти вслепую</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);font-weight:700;">—</span>Свой бухгалтер — <b style="color:var(--ink);white-space:nowrap;">CHF 100 000+</b> в год (полная стоимость)</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);font-weight:700;">—</span>Рутина отнимает время у главного бизнеса</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);font-weight:700;">—</span>Ошибки в цифрах всплывают слишком поздно</li>
-        </ul>
-      </div>
-      <div class="reveal" style="padding:40px 36px;background:var(--ink);color:#e9e6dd;">
-        <h3 class="upper" style="font-size:1.05rem;letter-spacing:.05em;color:var(--gold);margin-bottom:22px;">С MDV Treuhand</h3>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:15px;">
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);">✓</span>Актуальные цифры каждый день</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);">✓</span>Команда экспертов вместо собственного штата</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);">✓</span>Вы — о бизнесе, мы — о цифрах</li>
-          <li style="display:flex;gap:12px;"><span style="color:var(--gold);">✓</span>Ошибки видны сразу — через сверку с источником</li>
-        </ul>
+    <div class="inner reveal">
+      <span class="chip" style="margin-bottom:22px;">● Digital und einfach · Биль/Зееланд, Берн и Аргау</span>
+      <h1 style="margin-bottom:20px;">Ваш финансовый директор —<br>в реальном времени</h1>
+      <p style="font-size:1.18rem;color:#f3ece4;max-width:560px;margin-bottom:32px;">MDV Treuhand берёт на себя вашу бухгалтерию и роль внешнего финдиректора. Актуальная картина бизнеса — каждый день, а не раз в квартал. И заметно дешевле собственного отдела.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;">
+        <a href="#contact" class="btn">Запросить расчёт →</a>
+        <a href="#uslugi" class="btn btn-ghost">Что мы делаем</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== УСЛУГИ ===== -->
-<section id="uslugi" style="padding:88px 0;background:var(--tint);">
-  <div class="wrap">
-    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 52px;">
-      <p class="eyebrow">Что мы делаем для вас</p>
-      <h2 class="h-sec" style="margin-top:12px;">Вся финансовая функция — на аутсорсе</h2>
-      <div class="rule" style="margin:18px auto 0;"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v5.5l3.5 2"/></svg></div><h3 class="upper">Бухгалтерия в реальном времени</h3><p>Полное ведение учёта и годовой отчёт по OR. Баланс, отчёт о прибыли, статус MWST, дебиторка и кредиторка — актуально каждый день, а не в конце квартала.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3.5-4 3 3 5.5-6.5"/></svg></div><h3 class="upper">Внешний финансовый директор</h3><p>Цифровой CFO: управленческая отчётность, бюджеты, контроллинг и стратегия фирмы, ежеквартальные разборы. Решения вместо таблиц.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3 class="upper">Мультивалютный учёт EUR/CHF</h3><p>Параллельные книги в EUR и CHF до раппена — для экспортёров: часовая и прецизионная индустрия Биля, MEM, энергетика и фарма Аргау.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="upper">Зарплата и кадровый учёт</h3><p>Полностью ведём вашу Lohnbuchhaltung и кадровое администрирование — точно и в срок, со всеми социальными взносами и отчётностью.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18M8 21h8M12 17v4"/></svg></div><h3 class="upper">Цифровой портал MDV</h3><p>«Digitaler Treuhänder»: передавайте документы как удобно — e-mail, фото, PDF — и видьте своё финансовое положение онлайн в любой момент.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 8-9 9-5.5-1-9-4-9-9V6l9-3 9 3z"/></svg></div><h3 class="upper">Налоги и точность</h3><p>Компетентное налоговое сопровождение по всем вопросам. Каждая цифра сверена с банком, MWST-регистром и зарплатой — до раппена.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ПРЕИМУЩЕСТВА (тёмный баннер) ===== -->
-<section id="preimushchestva" style="padding:92px 0;background:var(--ink);color:#e9e6dd;">
-  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;">
+<!-- ===== ИНТРО / СДВИГ (воздушная секция, как «Zahlen sind unsere Stärke») ===== -->
+<section style="padding:96px 0;">
+  <div class="wrap g2" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
     <div class="reveal">
-      <p class="eyebrow" style="color:var(--gold);">Почему MDV</p>
-      <h2 class="upper" style="color:#fff;font-size:clamp(1.7rem,3.2vw,2.4rem);letter-spacing:.01em;margin:14px 0 22px;line-height:1.2;">Масштаб крупной компании — без её штата</h2>
-      <p style="color:#c8c4b8;margin-bottom:16px;">Вы получаете финансовую функцию корпоративного уровня — команду экспертов и технологию реального времени — вместо того чтобы строить и содержать собственный отдел. Ответственность несёт <b style="color:#fff;">MDV Treuhand</b>.</p>
-      <p style="color:#c8c4b8;">Мы работаем в <b style="color:#fff;">Биле/Зееланде</b> и кантонах <b style="color:#fff;">Берн и Аргау</b> и знаем ваш рынок — от прецизионной индустрии до промышленного экспорта. Свой бизнес вы видите в реальном времени, а данные остаются в Швейцарии.</p>
+      <p class="eyebrow">Что меняется</p>
+      <h2 class="sec-h" style="margin:14px 0 0;">Цифры — ваша опора.<br>Теперь в реальном времени.</h2>
+      <div style="width:56px;height:3px;background:var(--orange);border-radius:2px;margin-top:22px;"></div>
     </div>
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);">
-      <div style="background:var(--ink);padding:28px 24px;"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:2rem;color:var(--gold);">DE/FR</div><div style="font-size:.86rem;color:#c8c4b8;margin-top:6px;">Двуязычное обслуживание</div></div>
-      <div style="background:var(--ink);padding:28px 24px;"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:2rem;color:var(--gold);">CH</div><div style="font-size:.86rem;color:#c8c4b8;margin-top:6px;">Данные в Швейцарии</div></div>
-      <div style="background:var(--ink);padding:28px 24px;"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:2rem;color:var(--gold);">BE·AG</div><div style="font-size:.86rem;color:#c8c4b8;margin-top:6px;">Берн и Аргау</div></div>
-      <div style="background:var(--ink);padding:28px 24px;"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:2rem;color:var(--gold);">EUR/CHF</div><div style="font-size:.86rem;color:#c8c4b8;margin-top:6px;">Мультивалюта</div></div>
+    <div class="reveal">
+      <p class="lead" style="margin:0 0 22px;">Раньше средняя компания держала бухгалтерию внутри: один-два-три штатных бухгалтера, отчёт раз в квартал и решения почти вслепую. Сегодня это можно делать иначе.</p>
+      <p style="margin:0;">MDV ведёт ваш учёт <b style="color:var(--ink);">в реальном времени</b>: баланс, прибыль, статус MWST и денежный поток актуальны каждый день. Вы заняты бизнесом — мы отвечаем за цифры, а вы видите их в любой момент.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== СТОИМОСТЬ ===== -->
-<section id="stoimost" style="padding:88px 0;background:#fff;">
+<!-- ===== УСЛУГИ (светлая лента, цветные иконки) ===== -->
+<section id="uslugi" style="padding:96px 0;background:var(--soft);">
   <div class="wrap">
-    <div class="reveal" style="text-align:center;max-width:740px;margin:0 auto 30px;">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 56px;">
+      <p class="eyebrow">Что мы делаем для вас</p>
+      <h2 class="sec-h" style="margin-top:14px;">Вся финансовая функция — на нас</h2>
+      <p class="lead" style="margin-top:14px;">От ежедневного учёта до роли вашего финансового директора.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;">
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--orange-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#f47424" stroke-width="2.2"/><path d="M16 9v7l5 3" stroke="#3fa6c8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Бухгалтерия в реальном времени</h3>
+        <p>Полное ведение учёта и годовой отчёт по OR. Баланс, прибыль, MWST, дебиторка и кредиторка — актуально каждый день.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--teal-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M5 27V5" stroke="#3fa6c8" stroke-width="2.2" stroke-linecap="round"/><path d="M5 27h22" stroke="#3fa6c8" stroke-width="2.2" stroke-linecap="round"/><path d="M9 20l5-6 4 4 7-9" stroke="#f47424" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Внешний финансовый директор</h3>
+        <p>Цифровой CFO: управленческая отчётность, бюджеты, контроллинг и стратегия фирмы, ежеквартальные разборы. Решения вместо таблиц.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--orange-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#f47424" stroke-width="2.2"/><path d="M4 16h24" stroke="#3fa6c8" stroke-width="2.2"/><path d="M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24" stroke="#3fa6c8" stroke-width="2.2"/></svg>
+        </div>
+        <h3>Мультивалютный учёт EUR/CHF</h3>
+        <p>Параллельные книги в EUR и CHF до раппена — для экспортёров: часовая и прецизионная индустрия Биля, MEM, энергетика и фарма Аргау.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--teal-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="12" cy="11" r="4.5" stroke="#f47424" stroke-width="2.2"/><path d="M4 27c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#f47424" stroke-width="2.2" stroke-linecap="round"/><path d="M22 10h6M25 7v6" stroke="#3fa6c8" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Зарплата и кадровый учёт</h3>
+        <p>Полностью ведём вашу Lohnbuchhaltung и кадровое администрирование — точно и в срок, со всеми социальными взносами и отчётностью.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--orange-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="16" rx="2.5" stroke="#f47424" stroke-width="2.2"/><path d="M11 27h10M16 22v5" stroke="#3fa6c8" stroke-width="2.4" stroke-linecap="round"/><path d="M9 14l3 3 6-6" stroke="#3fa6c8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Цифровой портал MDV</h3>
+        <p>«Digitaler Treuhänder»: передавайте документы как удобно — e-mail, фото, PDF — и видьте своё финансовое положение онлайн в любой момент.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+      <div class="svc reveal">
+        <div class="tile" style="background:var(--teal-soft);">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l11 4v7c0 7-4.6 11-11 13C9.6 26 5 22 5 15V8l11-4z" stroke="#f47424" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 15l3.5 3.5L21 12" stroke="#3fa6c8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Налоги и точность</h3>
+        <p>Компетентное налоговое сопровождение по всем вопросам. Каждая цифра сверена с банком, MWST-регистром и зарплатой — до раппена.</p>
+        <a href="#contact" class="link-more">Подробнее →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОЧЕМУ MDV (фото + текст, воздушно, светло) ===== -->
+<section id="pochemu" style="padding:96px 0;">
+  <div class="wrap g2" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="reveal" style="order:2;">
+      <p class="eyebrow">Почему MDV</p>
+      <h2 class="sec-h" style="margin:14px 0 20px;">Масштаб крупной компании — без её штата</h2>
+      <p class="lead" style="margin-bottom:16px;">Вы получаете финансовую функцию корпоративного уровня — команду экспертов и технологию реального времени — вместо того чтобы строить и содержать собственный отдел.</p>
+      <p style="margin-bottom:28px;">Мы работаем в Биле/Зееланде и кантонах Берн и Аргау и знаем ваш рынок — от прецизионной индустрии до промышленного экспорта. Свой бизнес вы видите в реальном времени, а данные остаются в Швейцарии.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <div class="pill"><b>DE/FR</b><span>Двуязычное обслуживание</span></div>
+        <div class="pill"><b>CH</b><span>Данные в Швейцарии</span></div>
+        <div class="pill"><b>BE·AG</b><span>Берн и Аргау</span></div>
+        <div class="pill"><b>EUR/CHF</b><span>Мультивалюта</span></div>
+      </div>
+    </div>
+    <div class="reveal" style="order:1;">
+      <img src="assets/img/about.jpg?v=2" alt="Консультация финансового директора" style="width:100%;border-radius:var(--r);box-shadow:0 30px 60px -34px rgba(40,40,40,.5);">
+    </div>
+  </div>
+</section>
+
+<!-- ===== СТОИМОСТЬ (светло, дружелюбно) ===== -->
+<section id="stoimost" style="padding:96px 0;background:var(--soft);">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto 18px;">
       <p class="eyebrow">Стоимость</p>
-      <h2 class="h-sec" style="margin-top:12px;">Во сколько обходится собственная бухгалтерия?</h2>
-      <div class="rule" style="margin:18px auto 0;"></div>
-      <p class="lead" style="margin-top:20px;">С социальными взносами и рабочим местом одна штатная бухгалтерия обходится более чем в <b style="color:var(--ink);">CHF 100 000</b> в год, а команда — в несколько сотен тысяч. С MDV вы получаете больше, а платите заметно меньше.</p>
+      <h2 class="sec-h" style="margin-top:14px;">Во сколько обходится собственная бухгалтерия?</h2>
+      <p class="lead" style="margin-top:16px;">С социальными взносами и рабочим местом одна штатная бухгалтерия обходится более чем в <b style="color:var(--ink);">CHF 100 000</b> в год, а команда — в несколько сотен тысяч. С MDV вы получаете больше, а платите заметно меньше.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid var(--line);margin:42px 0 54px;">
-      <div class="reveal" style="padding:30px;text-align:center;border-right:1px solid var(--line);"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.8rem;color:var(--gold-d);">≈ 100k</div><div style="margin-top:8px;font-size:.9rem;">CHF/год — свой бухгалтер (полная стоимость)</div></div>
-      <div class="reveal" style="padding:30px;text-align:center;border-right:1px solid var(--line);"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.8rem;color:var(--gold-d);">140–165k</div><div style="margin-top:8px;font-size:.9rem;">CHF/год — руководитель бухгалтерии</div></div>
-      <div class="reveal" style="padding:30px;text-align:center;"><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.8rem;color:var(--gold-d);">200–440k</div><div style="margin-top:8px;font-size:.9rem;">CHF/год — своя команда из 2–4 человек</div></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:860px;margin:40px auto 60px;">
+      <div class="reveal pill" style="align-items:center;text-align:center;padding:26px;"><b style="font-size:1.9rem;">≈ 100k</b><span style="margin-top:8px;font-size:.9rem;color:var(--body);">CHF/год — свой бухгалтер (полная стоимость)</span></div>
+      <div class="reveal pill" style="align-items:center;text-align:center;padding:26px;"><b style="font-size:1.9rem;">140–165k</b><span style="margin-top:8px;font-size:.9rem;color:var(--body);">CHF/год — руководитель бухгалтерии</span></div>
+      <div class="reveal pill" style="align-items:center;text-align:center;padding:26px;"><b style="font-size:1.9rem;">200–440k</b><span style="margin-top:8px;font-size:.9rem;color:var(--body);">CHF/год — своя команда из 2–4 человек</span></div>
     </div>
-    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 36px;">
-      <h3 class="upper" style="font-size:1.2rem;letter-spacing:.03em;">Прозрачные пакеты — под размер вашей компании</h3>
-      <p style="font-size:.95rem;margin-top:6px;">Выберите свой уровень — и платите за результат, а не за штат.</p>
+
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto 34px;">
+      <h3 style="font-size:1.3rem;">Прозрачные пакеты — под размер вашей компании</h3>
+      <p style="margin-top:6px;">Платите за результат, а не за штат.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:stretch;">
-      <div class="reveal" style="background:#fff;border:1px solid var(--line);padding:34px 28px;display:flex;flex-direction:column;">
+      <div class="reveal" style="background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;">
         <span class="eyebrow">Real-Time Books</span>
-        <p style="font-size:.86rem;margin-top:8px;color:var(--gray);">Средняя компания · 10–49 сотрудников</p>
-        <div style="margin:18px 0;"><span style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.7rem;color:var(--ink);">от 18k</span><span style="font-size:.85rem;color:var(--gray);"> CHF / год</span></div>
-        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:9px;font-size:.92rem;color:var(--ink);">
-          <li>· Учёт в реальном времени, MWST, дебиторка/кредиторка</li><li>· Защищённый портал MDV</li><li>· Регулярная отчётность</li>
+        <p style="font-size:.88rem;margin:8px 0 0;color:var(--muted);">Средняя компания · 10–49 сотрудников</p>
+        <div style="margin:16px 0;"><span style="font-family:'Poppins','Manrope';font-weight:600;font-size:1.9rem;color:var(--ink);">от 18k</span><span style="font-size:.85rem;color:var(--muted);"> CHF / год</span></div>
+        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:10px;font-size:.94rem;color:var(--ink);">
+          <li>✓ Учёт в реальном времени, MWST, дебиторка/кредиторка</li><li>✓ Защищённый портал MDV</li><li>✓ Регулярная отчётность</li>
         </ul>
-        <p style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;color:var(--gray);">До <b style="color:var(--gold-d);">70%</b> дешевле собственного бухгалтера</p>
+        <p style="margin:22px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted);">До <b style="color:var(--orange-d);">70%</b> дешевле собственного бухгалтера</p>
       </div>
-      <div class="reveal" style="background:var(--ink);color:#e9e6dd;padding:36px 28px;display:flex;flex-direction:column;position:relative;">
-        <span style="position:absolute;top:18px;right:18px;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--gold);padding:5px 10px;font-weight:700;">Чаще всего выбирают</span>
-        <span class="eyebrow" style="color:var(--gold);">Finance Partner</span>
-        <p style="font-size:.86rem;margin-top:8px;color:#b6b2a6;">Компания · 50–249 сотрудников</p>
-        <div style="margin:18px 0;"><span style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.7rem;color:#fff;">от 36k</span><span style="font-size:.85rem;color:#b6b2a6;"> CHF / год</span></div>
-        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:9px;font-size:.92rem;color:#e2dfd5;">
-          <li>· Всё из Real-Time Books</li><li>· Ежемесячная управленческая отчётность</li><li>· Мультивалюта EUR/CHF</li><li>· Ежеквартальные разборы с финдиректором</li>
+
+      <div class="reveal" style="background:#fff;border:2px solid var(--orange);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;position:relative;box-shadow:0 26px 50px -30px rgba(221,87,18,.5);">
+        <span style="position:absolute;top:-13px;left:28px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--orange);padding:5px 13px;border-radius:100px;font-weight:700;">Чаще всего выбирают</span>
+        <span class="eyebrow">Finance Partner</span>
+        <p style="font-size:.88rem;margin:8px 0 0;color:var(--muted);">Компания · 50–249 сотрудников</p>
+        <div style="margin:16px 0;"><span style="font-family:'Poppins','Manrope';font-weight:600;font-size:1.9rem;color:var(--ink);">от 36k</span><span style="font-size:.85rem;color:var(--muted);"> CHF / год</span></div>
+        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:10px;font-size:.94rem;color:var(--ink);">
+          <li>✓ Всё из Real-Time Books</li><li>✓ Ежемесячная управленческая отчётность</li><li>✓ Мультивалюта EUR/CHF</li><li>✓ Ежеквартальные разборы с финдиректором</li>
         </ul>
-        <p style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);font-size:.86rem;color:#b6b2a6;">До <b style="color:#fff;">80%</b> дешевле собственной команды</p>
+        <p style="margin:22px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted);">До <b style="color:var(--orange-d);">80%</b> дешевле собственной команды</p>
       </div>
-      <div class="reveal" style="background:#fff;border:1px solid var(--line);padding:34px 28px;display:flex;flex-direction:column;">
+
+      <div class="reveal" style="background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;">
         <span class="eyebrow">Virtual CFO</span>
-        <p style="font-size:.86rem;margin-top:8px;color:var(--gray);">Крупная компания / группа · 250+</p>
-        <div style="margin:18px 0;"><span style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.7rem;color:var(--ink);">от 60k</span><span style="font-size:.85rem;color:var(--gray);"> CHF / год</span></div>
-        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:9px;font-size:.92rem;color:var(--ink);">
-          <li>· Всё из Finance Partner</li><li>· Консолидация и бюджетирование</li><li>· Роль внешнего финансового директора</li><li>· Налоговое планирование</li>
+        <p style="font-size:.88rem;margin:8px 0 0;color:var(--muted);">Крупная компания / группа · 250+</p>
+        <div style="margin:16px 0;"><span style="font-family:'Poppins','Manrope';font-weight:600;font-size:1.9rem;color:var(--ink);">от 60k</span><span style="font-size:.85rem;color:var(--muted);"> CHF / год</span></div>
+        <ul style="list-style:none;padding:0;margin:0;flex:1;display:flex;flex-direction:column;gap:10px;font-size:.94rem;color:var(--ink);">
+          <li>✓ Всё из Finance Partner</li><li>✓ Консолидация и бюджетирование</li><li>✓ Роль внешнего финдиректора</li><li>✓ Налоговое планирование</li>
         </ul>
-        <p style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;color:var(--gray);">Дешевле собственного штата вместе с финдиректором</p>
+        <p style="margin:22px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted);">Дешевле собственного штата с финдиректором</p>
       </div>
     </div>
-    <p class="reveal" style="text-align:center;font-size:.9rem;color:var(--gray);margin-top:26px;">Точную стоимость рассчитаем бесплатно по объёму вашей компании — <a href="#contact" style="color:var(--gold-d);font-weight:600;border-bottom:1px solid var(--gold);">запросить расчёт</a>.</p>
+    <p class="reveal" style="text-align:center;font-size:.92rem;color:var(--muted);margin-top:28px;">Точную стоимость рассчитаем бесплатно по объёму вашей компании — <a href="#contact" class="link-more">запросить расчёт →</a></p>
   </div>
 </section>
 
 <!-- ===== КАК РАБОТАЕМ ===== -->
-<section style="padding:88px 0;background:var(--tint);">
+<section style="padding:96px 0;">
   <div class="wrap">
-    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 54px;">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 56px;">
       <p class="eyebrow">Как мы работаем</p>
-      <h2 class="h-sec" style="margin-top:12px;">Три шага — и вы видите бизнес в реальном времени</h2>
-      <div class="rule" style="margin:18px auto 0;"></div>
+      <h2 class="sec-h" style="margin-top:14px;">Три шага — и вы видите бизнес каждый день</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
-      <div class="reveal" style="text-align:center;"><div style="width:54px;height:54px;border:1.5px solid var(--gold);color:var(--gold-d);font-family:'Poppins','Manrope';font-weight:500;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">1</div><h3 class="upper" style="font-size:1.05rem;margin-bottom:10px;">Вы передаёте документы</h3><p style="font-size:.95rem;">E-mail, фото, PDF-выписки или загрузка через портал. Без внедрения софта и переобучения вашей команды.</p></div>
-      <div class="reveal" style="text-align:center;"><div style="width:54px;height:54px;border:1.5px solid var(--gold);color:var(--gold-d);font-family:'Poppins','Manrope';font-weight:500;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">2</div><h3 class="upper" style="font-size:1.05rem;margin-bottom:10px;">Мы ведём учёт в реальном времени</h3><p style="font-size:.95rem;">Проводки, сверка с источником, MWST, зарплата — с контролем качества на каждом шаге. Данные в Швейцарии.</p></div>
-      <div class="reveal" style="text-align:center;"><div style="width:54px;height:54px;border:1.5px solid var(--gold);color:var(--gold-d);font-family:'Poppins','Manrope';font-weight:500;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">3</div><h3 class="upper" style="font-size:1.05rem;margin-bottom:10px;">Вы видите картину каждый день</h3><p style="font-size:.95rem;">Баланс, прибыль, MWST, аналитика по подразделениям — в реальном времени, плюс отчётность на уровне финдиректора.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ФОТО-БЛОК ===== -->
-<section style="position:relative;overflow:hidden;background:var(--ink);">
-  <img src="assets/img/office.jpg?v=1" alt="Современное рабочее пространство" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;">
-  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,16,16,.9) 0%,rgba(16,16,16,.76) 50%,rgba(16,16,16,.56) 100%);"></div>
-  <div class="wrap" style="position:relative;padding:clamp(74px,9vw,104px) 26px;">
-    <div class="reveal" style="max-width:600px;color:#fff;">
-      <p class="eyebrow" style="color:var(--gold);">Реальное время</p>
-      <h2 class="upper" style="color:#fff;font-size:clamp(1.6rem,2.9vw,2.3rem);letter-spacing:.01em;line-height:1.18;margin:16px 0 0;">Финансовая картина вашей компании — открыта каждый день</h2>
-      <div class="rule" style="margin:22px 0 24px;"></div>
-      <p style="color:#ded9d0;max-width:520px;font-size:1.04rem;">Не отчёт раз в квартал, а актуальные цифры в любой момент: баланс, прибыль, MWST, денежный поток. Вы решаете на основе сегодняшних цифр, а не прошлого периода.</p>
-      <div style="display:flex;gap:42px;margin-top:34px;flex-wrap:wrap;">
-        <div><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.9rem;color:var(--gold);">24/7</div><div style="font-size:.84rem;color:#b6b2a6;margin-top:5px;">Онлайн-доступ к вашим цифрам</div></div>
-        <div><div style="font-family:'Poppins','Manrope';font-weight:500;font-size:1.9rem;color:var(--gold);">CH</div><div style="font-size:.84rem;color:#b6b2a6;margin-top:5px;">Данные в Швейцарии</div></div>
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;">
+      <div class="reveal" style="text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:var(--orange-soft);color:var(--orange-d);font-family:'Poppins','Manrope';font-weight:600;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">1</div><h3 style="font-size:1.18rem;margin-bottom:10px;">Вы передаёте документы</h3><p style="font-size:.96rem;">E-mail, фото, PDF-выписки или загрузка через портал. Без внедрения софта и переобучения вашей команды.</p></div>
+      <div class="reveal" style="text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-family:'Poppins','Manrope';font-weight:600;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">2</div><h3 style="font-size:1.18rem;margin-bottom:10px;">Мы ведём учёт в реальном времени</h3><p style="font-size:.96rem;">Проводки, сверка с источником, MWST, зарплата — с контролем качества на каждом шаге. Данные в Швейцарии.</p></div>
+      <div class="reveal" style="text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:var(--orange-soft);color:var(--orange-d);font-family:'Poppins','Manrope';font-weight:600;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;">3</div><h3 style="font-size:1.18rem;margin-bottom:10px;">Вы видите картину каждый день</h3><p style="font-size:.96rem;">Баланс, прибыль, MWST, аналитика по подразделениям — в реальном времени, плюс отчётность на уровне финдиректора.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ===== РЕГИОН ===== -->
-<section id="region" style="padding:88px 0;background:#fff;">
+<section id="region" style="padding:96px 0;background:var(--soft);">
   <div class="wrap">
     <div class="reveal" style="text-align:center;max-width:660px;margin:0 auto 52px;">
       <p class="eyebrow">Регион</p>
-      <h2 class="h-sec" style="margin-top:12px;">Рядом с вами — в Биле/Зееланде, Берне и Аргау</h2>
-      <div class="rule" style="margin:18px auto 0;"></div>
+      <h2 class="sec-h" style="margin-top:14px;">Рядом с вами — в Биле/Зееланде, Берне и Аргау</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-      <div class="reveal card"><h3 class="upper" style="color:var(--gold-d);">Биль/Зееланд и Берн</h3><p>Из Нидау мы обслуживаем средние и крупные компании в двуязычном регионе Зееланд и кантоне Берн: часовая и прецизионная индустрия, экспорт. Та же команда и технология реального времени — без затрат на собственный финотдел. Клиентский портал на немецком и французском.</p></div>
-      <div class="reveal card"><h3 class="upper" style="color:var(--gold-d);">Аргау</h3><p>MEM-индустрия, энергетика и фарма — компании со сложным учётом, экспортом и расчётами в нескольких валютах. Параллельный учёт <b style="color:var(--ink);">EUR/CHF</b> мы ведём точно под ваши экспортные сделки — и ваши данные остаются в Швейцарии.</p></div>
+      <div class="reveal" style="background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;">
+        <h3 style="font-size:1.2rem;color:var(--orange-d);margin-bottom:12px;">Биль/Зееланд и Берн</h3>
+        <p>Из Нидау мы обслуживаем средние и крупные компании в двуязычном регионе Зееланд и кантоне Берн: часовая и прецизионная индустрия, экспорт. Та же команда и технология реального времени — без затрат на собственный финотдел. Клиентский портал на немецком и французском.</p>
+      </div>
+      <div class="reveal" style="background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;">
+        <h3 style="font-size:1.2rem;color:var(--orange-d);margin-bottom:12px;">Аргау</h3>
+        <p>MEM-индустрия, энергетика и фарма — компании со сложным учётом, экспортом и расчётами в нескольких валютах. Параллельный учёт <b style="color:var(--ink);">EUR/CHF</b> мы ведём точно под ваши экспортные сделки — и ваши данные остаются в Швейцарии.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== КОНТАКТ ===== -->
-<section id="contact" style="padding:88px 0;background:var(--tint);">
-  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;">
+<!-- ===== КОНТАКТ (форма + фото, как у MDV) ===== -->
+<section id="contact" style="padding:96px 0;">
+  <div class="wrap g2" style="display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:stretch;">
     <div class="reveal">
       <p class="eyebrow">Связаться с нами</p>
-      <h2 class="h-sec" style="margin:12px 0 18px;">Начните с 90-дневного пилота</h2>
-      <div class="rule" style="margin-bottom:24px;"></div>
-      <p class="lead" style="max-width:440px;margin-bottom:30px;">Выберите одно-два направления. Мы ведём учёт в реальном времени, вы проверяете каждую цифру и сами решаете, продолжать ли — увидев качество на собственных данных.</p>
-      <div style="display:flex;flex-direction:column;gap:18px;font-size:.96rem;">
-        <div><div class="upper" style="font-family:'Poppins','Manrope';font-weight:600;color:var(--ink);letter-spacing:.03em;margin-bottom:5px;">MDV Treuhand GmbH</div><p style="color:var(--ink);">Schlossstrasse 15 · 2560 Nidau</p></div>
-        <div style="color:var(--ink);"><p>+41 32 526 81 16</p><p><a href="mailto:info@mdv-treuhand.ch" style="color:var(--gold-d);border-bottom:1px solid var(--gold);">info@mdv-treuhand.ch</a></p></div>
+      <h2 class="sec-h" style="margin:14px 0 18px;">Начните с 90-дневного пилота</h2>
+      <p class="lead" style="margin-bottom:26px;max-width:440px;">Выберите одно-два направления. Мы ведём учёт в реальном времени, вы проверяете каждую цифру и сами решаете, продолжать ли — увидев качество на собственных данных.</p>
+      <img src="assets/img/contact.jpg?v=2" alt="Партнёрство" style="width:100%;border-radius:var(--r);box-shadow:0 30px 60px -36px rgba(40,40,40,.5);margin-bottom:26px;">
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:.98rem;color:var(--ink);">
+        <div style="font-family:'Poppins','Manrope';font-weight:600;">MDV Treuhand GmbH</div>
+        <div>Schlossstrasse 15 · 2560 Nidau</div>
+        <div>+41 32 526 81 16 · <a href="mailto:info@mdv-treuhand.ch" class="link-more" style="display:inline;">info@mdv-treuhand.ch</a></div>
       </div>
     </div>
-    <div class="reveal" style="background:#fff;border:1px solid var(--line);padding:38px 32px;">
-      <form onsubmit="return false" style="display:flex;flex-direction:column;gap:15px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
-          <div><label style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;">Имя</label><input type="text" style="width:100%;border:1px solid var(--line);padding:11px 13px;font-family:inherit;font-size:.95rem;"></div>
-          <div><label style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;">Компания</label><input type="text" style="width:100%;border:1px solid var(--line);padding:11px 13px;font-family:inherit;font-size:.95rem;"></div>
+    <div class="reveal" style="background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:36px 32px;">
+      <form onsubmit="return false" style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div><label>Имя</label><input type="text"></div>
+          <div><label>Компания</label><input type="text"></div>
         </div>
-        <div><label style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;">E-mail</label><input type="email" style="width:100%;border:1px solid var(--line);padding:11px 13px;font-family:inherit;font-size:.95rem;"></div>
-        <div><label style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;">Телефон</label><input type="tel" style="width:100%;border:1px solid var(--line);padding:11px 13px;font-family:inherit;font-size:.95rem;"></div>
-        <div><label style="display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:6px;">Сообщение</label><textarea rows="3" style="width:100%;border:1px solid var(--line);padding:11px 13px;font-family:inherit;font-size:.95rem;"></textarea></div>
-        <button class="btn" style="width:100%;border:none;">Запросить расчёт</button>
-        <p style="text-align:center;font-size:.78rem;color:var(--gray);">Демо-форма. Реальная отправка подключается при запуске.</p>
+        <div><label>E-mail</label><input type="email"></div>
+        <div><label>Телефон</label><input type="tel"></div>
+        <div><label>Сообщение</label><textarea rows="4"></textarea></div>
+        <button class="btn" style="width:100%;justify-content:center;border:none;">Запросить расчёт</button>
+        <p style="text-align:center;font-size:.8rem;color:var(--muted);margin:0;">Демо-форма. Реальная отправка подключается при запуске.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer style="background:var(--black);color:rgba(255,255,255,.7);padding:60px 0 30px;">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1);">
-      <div>
-        <a href="#top" style="font-family:'Poppins','Manrope',sans-serif;font-weight:600;font-size:1.5rem;letter-spacing:.02em;color:#fff;"><b style="color:var(--gold);">MDV</b> Treuhand</a>
-        <p style="font-size:.9rem;color:rgba(255,255,255,.55);max-width:270px;margin-top:14px;">Бухгалтерия и финансовая функция в реальном времени для компаний в регионе Биль/Зееланд, Берн и Аргау.</p>
-      </div>
-      <div style="font-size:.9rem;">
-        <h4 class="upper" style="color:#fff;font-size:.86rem;letter-spacing:.1em;margin-bottom:14px;">Контакт</h4>
-        <p style="margin-bottom:6px;">Schlossstrasse 15</p>
-        <p style="margin-bottom:6px;">2560 Nidau</p>
-        <p style="color:rgba(255,255,255,.55);">+41 32 526 81 16 · info@mdv-treuhand.ch</p>
-      </div>
-      <div>
-        <h4 class="upper" style="color:#fff;font-size:.86rem;letter-spacing:.1em;margin-bottom:14px;">Технология реального времени</h4>
-        <a href="https://arvut.ch" target="_blank" rel="noopener" style="font-family:'Poppins','Manrope';font-weight:600;color:var(--green);font-size:1.5rem;letter-spacing:.02em;">Arvut</a>
-        <p style="font-size:.86rem;color:rgba(255,255,255,.55);margin-top:8px;">Автоматизация и бухгалтерская платформа.<br>Данные размещаются в Швейцарии.</p>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:.82rem;color:rgba(255,255,255,.45);margin-top:26px;">MDV Treuhand GmbH · Nidau · Демо-страница</p>
+<!-- ===== FOOTER (тонкая тёмная полоса, как у MDV) ===== -->
+<footer style="background:var(--dark);color:rgba(255,255,255,.75);padding:42px 0;">
+  <div class="wrap" style="text-align:center;display:flex;flex-direction:column;gap:10px;">
+    <div style="font-family:'Poppins','Manrope';font-weight:600;font-size:1.25rem;color:#fff;"><span style="color:var(--orange);">MDV</span> Treuhand</div>
+    <p style="margin:0;font-size:.92rem;">Schlossstrasse 15 · 2560 Nidau · +41 32 526 81 16 · info@mdv-treuhand.ch</p>
+    <p style="margin:6px 0 0;font-size:.86rem;color:rgba(255,255,255,.55);">Технология реального времени — <a href="https://arvut.ch" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">Arvut</a> · данные размещаются в Швейцарии</p>
+    <p style="margin:6px 0 0;font-size:.82rem;color:rgba(255,255,255,.4);">© MDV Treuhand GmbH · Демо-страница</p>
   </div>
 </footer>
 
-<button id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button id="toTop" aria-label="Наверх"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>10);const t=document.getElementById('toTop');t.classList.toggle('show',scrollY>600);},{passive:true});
 if('IntersectionObserver' in window){
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('reveal'));const idx=Math.max(0,sibs.indexOf(el));el.style.transitionDelay=(idx*0.09)+'s';el.classList.add('in');io.unobserve(el);setTimeout(()=>{el.style.transitionDelay='';},900+idx*90);})},{threshold:.12});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('reveal'));const idx=Math.max(0,sibs.indexOf(el));el.style.transitionDelay=(idx*0.08)+'s';el.classList.add('in');io.unobserve(el);setTimeout(()=>{el.style.transitionDelay='';},900+idx*80);})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in');}),2400));
-}else{
-  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
-}
-document.querySelectorAll('a[href="#top"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}));
-const toTop=document.getElementById('toTop');
-addEventListener('scroll',()=>{toTop.classList.toggle('show',scrollY>500);},{passive:true});
-toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in');}),2200));
+}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));}
+document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
 </body>
 </html>
